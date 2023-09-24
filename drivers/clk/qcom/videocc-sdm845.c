@@ -111,6 +111,8 @@ static const struct freq_tbl ftbl_video_cc_venus_clk_src_sdm845_v2[] = {
 	F(404000000, P_VIDEO_PLL0_OUT_MAIN, 1, 0, 0),
 	F(444000000, P_VIDEO_PLL0_OUT_MAIN, 1, 0, 0),
 	F(533000000, P_VIDEO_PLL0_OUT_MAIN, 1, 0, 0),
+	F(625000000, P_VIDEO_PLL0_OUT_MAIN, 1, 0, 0),
+	F(750000000, P_VIDEO_PLL0_OUT_MAIN, 1, 0, 0),
 	{ }
 };
 
@@ -143,8 +145,8 @@ static struct clk_rcg2 video_cc_venus_clk_src = {
 			LOWER, 200000000,
 			LOW, 320000000,
 			LOW_L1, 380000000,
-			NOMINAL, 444000000,
-			HIGH, 533000000),
+			NOMINAL, 625000000,
+			HIGH, 750000000),
 	},
 };
 
@@ -348,8 +350,11 @@ static void video_cc_sdm845_fixup_sdm845v2(void)
 {
 	video_cc_venus_clk_src.freq_tbl = ftbl_video_cc_venus_clk_src_sdm845_v2;
 	video_cc_venus_clk_src.clkr.hw.init->rate_max[VDD_CX_LOW] = 330000000;
-	video_cc_venus_clk_src.clkr.hw.init->rate_max[VDD_CX_LOW_L1] =
-		404000000;
+	video_cc_venus_clk_src.clkr.hw.init->rate_max[VDD_CX_LOW_L1] = 404000000;
+	video_cc_venus_clk_src.clkr.hw.init->rate_max[VDD_CX_NOMINAL] = 444000000;
+	video_cc_venus_clk_src.clkr.hw.init->rate_max[VDD_CX_HIGH] = 533000000;
+	video_cc_venus_clk_src.clkr.hw.init->rate_max[VDD_CX_HIGH] = 625000000;
+	video_cc_venus_clk_src.clkr.hw.init->rate_max[VDD_CX_HIGH] = 750000000;
 }
 
 static void video_cc_sdm845_fixup_sdm670(void)
