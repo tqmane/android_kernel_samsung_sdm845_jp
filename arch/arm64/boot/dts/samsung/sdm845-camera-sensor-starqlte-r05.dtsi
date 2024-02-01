@@ -12,15 +12,15 @@
  */
 
 &pm8998_l17 {
-	regulator-min-microvolt = <1050000>;
-	regulator-max-microvolt = <1050000>;
-	qcom,init-voltage = <1050000>;
+	regulator-min-microvolt = <1000000>;
+	regulator-max-microvolt = <1000000>;
+	qcom,init-voltage = <1000000>;
 };
 
 &pm8998_l19 {
-	regulator-min-microvolt = <1800000>;
-	regulator-max-microvolt = <1800000>;
-	qcom,init-voltage = <1800000>;
+	regulator-min-microvolt = <1780000>;
+	regulator-max-microvolt = <1780000>;
+	qcom,init-voltage = <1780000>;
 };
 
 &soc {
@@ -62,7 +62,7 @@
 		cell-index = <0>;
 		reg = <0>;
 		compatible = "qcom,eeprom";
-		spi-max-frequency = <24000000>;
+		spi-max-frequency = <31000000>;
 
 		// eeprom-name = "fidelix";
 		eeprom-id0 = <0xF8 0x15>;
@@ -164,8 +164,8 @@
 		cam_vio-supply = <&s2mpb02_l10>; /* VDD_OIS_1P8 */
 		regulator-names = "cam_vio";
 		rgltr-cntrl-support;
-		rgltr-min-voltage = <1800000>;
-		rgltr-max-voltage = <1800000>;
+		rgltr-min-voltage = <1780000>;
+		rgltr-max-voltage = <1780000>;
 		rgltr-load-current = <5000>;
 		gpio-no-mux = <1>;
 		sensor-position = <0>;
@@ -238,8 +238,8 @@
 		cam_vio-supply = <&s2mpb02_l6>; /* VDD_VTCAM_IO_1P8 */
 		regulator-names = "cam_vio";
 		rgltr-cntrl-support;
-		rgltr-min-voltage = <1800000>;
-		rgltr-max-voltage = <1800000>;
+		rgltr-min-voltage = <1780000>;
+		rgltr-max-voltage = <1780000>;
 		rgltr-load-current = <5000>;
 		gpio-no-mux = <1>;
 		sensor-position = <1>;
@@ -257,8 +257,8 @@
 		cam_vio-supply = <&s2mpb02_l6>;
 		regulator-names = "cam_vaf", "cam_vio";
 		rgltr-cntrl-support;
-		rgltr-min-voltage = <2800000 1800000>;
-		rgltr-max-voltage = <2800000 1800000>;
+		rgltr-min-voltage = <2780000 1780000>;
+		rgltr-max-voltage = <2780000 1780000>;
 		rgltr-load-current = <5000 5000>;
 		status = "ok";
 	};
@@ -276,8 +276,8 @@
 		cam_vio-supply = <&s2mpb02_l10>;
 		regulator-names = "cam_vaf", "cam_vio";
 		rgltr-cntrl-support;
-		rgltr-min-voltage = <3300000 1800000>;
-		rgltr-max-voltage = <3300000 1800000>;
+		rgltr-min-voltage = <3280000 1780000>;
+		rgltr-max-voltage = <3280000 1780000>;
 		rgltr-load-current = <5000 5000>;
 		status = "ok";
 	};
@@ -292,8 +292,8 @@
 		cam_vio-supply = <&s2mpb02_l10>;
 		regulator-names = "cam_vaf", "cam_vio";
 		rgltr-cntrl-support;
-		rgltr-min-voltage = <3300000 1800000>;
-		rgltr-max-voltage = <3300000 1800000>;
+		rgltr-min-voltage = <3280000 1780000>;
+		rgltr-max-voltage = <3280000 1780000>;
 		rgltr-load-current = <5000 5000>;
 
 		status = "ok";
@@ -312,8 +312,8 @@
 		cam_clk-supply = <&titan_top_gdsc>;
 		regulator-names = "cam_vio", "cam_vana", "cam_vdig", "cam_v_custom1", "cam_clk";
 		rgltr-cntrl-support;
-		rgltr-min-voltage = <1800000 2800000 2800000 1800000 0>;
-		rgltr-max-voltage = <1800000 2800000 2800000 1800000 0>;
+		rgltr-min-voltage = <1780000 2780000 2780000 1780000 0>;
+		rgltr-max-voltage = <1780000 2780000 2780000 1780000 0>;
 		rgltr-load-current = <5000 5000 5000 5000 0>;
 		gpio-no-mux = <0>;
 		use-shared-clk;
@@ -327,7 +327,7 @@
 		clocks = <&clock_camcc CAM_CC_MCLK0_CLK>;
 		clock-names = "cam_clk";
 		clock-cntl-level = "turbo";
-		clock-rates = <24000000>;
+		clock-rates = <31000000>;
 		status = "ok";
 	};
 };
@@ -367,8 +367,8 @@
 		cam_clk-supply = <&titan_top_gdsc>;
 		regulator-names = "cam_vdig", "cam_vio", "cam_vana", "cam_v_custom1", "cam_v_custom2", "cam_v_custom3", "cam_v_custom4", "cam_v_custom5", "cam_v_custom10", "cam_clk";
 		rgltr-cntrl-support;
-		rgltr-min-voltage = <1000000 1800000 3200000 2850000 1100000 1800000 2800000 2800000 1100000 0>;
-		rgltr-max-voltage = <1000000 1800000 3200000 2850000 1100000 1800000 2800000 2800000 1100000 0>;
+		rgltr-min-voltage = <1000000 1780000 3100000 2820000 1100000 1780000 2780000 2780000 1100000 0>;
+		rgltr-max-voltage = <1000000 1780000 3100000 2820000 1100000 1780000 2780000 2780000 1100000 0>;
 		rgltr-load-current = <200000 200000 50000 200000 5000 5000 5000 5000 5000 0>;
 		gpio-no-mux = <0>;
 		use-shared-clk;
@@ -388,7 +388,7 @@
 		clocks = <&clock_camcc CAM_CC_MCLK0_CLK>;
 		clock-names = "cam_clk";
 		clock-cntl-level = "turbo";
-		clock-rates = <24000000>;
+		clock-rates = <31000000>;
 
 		cam,isp = <0>;                  // 0 : INT , 1 : EXT , 2 : SOC
 		cam,cal_memory = <1>;           // 0 : N , 1 : FROM , 2 : EEPROM , 3 : OTP
@@ -419,8 +419,8 @@
 		cam_clk-supply = <&titan_top_gdsc>;
 		regulator-names = "cam_vdig", "cam_vio", "cam_vana", "cam_clk";
 		rgltr-cntrl-support;
-		rgltr-min-voltage = <1050000 1800000 2800000 0>;
-		rgltr-max-voltage = <1050000 1800000 2800000 0>;
+		rgltr-min-voltage = <1000000 1780000 2780000 0>;
+		rgltr-max-voltage = <1000000 1780000 2780000 0>;
 		rgltr-load-current = <200000 200000 5000 0>;
 		gpio-no-mux = <0>;
 		pinctrl-names = "cam_default", "cam_suspend";
@@ -441,7 +441,7 @@
 		clocks = <&clock_camcc CAM_CC_MCLK2_CLK>;
 		clock-names = "cam_clk";
 		clock-cntl-level = "turbo";
-		clock-rates = <24000000>;
+		clock-rates = <31000000>;
 
 		cam,isp = <0>;                  // 0 : INT , 1 : EXT , 2 : SOC
 		cam,cal_memory = <2>;           // 0 : N , 1 : FROM , 2 : EEPROM , 3 : OTP
@@ -472,8 +472,8 @@
 		cam_clk-supply = <&titan_top_gdsc>;
 		regulator-names = "cam_vdig", "cam_vio", "cam_vana", "cam_clk";
 		rgltr-cntrl-support;
-		rgltr-min-voltage = <1050000 1800000 2800000 0>;
-		rgltr-max-voltage = <1050000 1800000 2800000 0>;
+		rgltr-min-voltage = <1000000 1780000 2780000 0>;
+		rgltr-max-voltage = <1000000 1780000 2780000 0>;
 		rgltr-load-current = <200000 200000 5000 0>;
 		gpio-no-mux = <0>;
 		pinctrl-names = "cam_default", "cam_suspend";
@@ -494,7 +494,7 @@
 		clocks = <&clock_camcc CAM_CC_MCLK2_CLK>;
 		clock-names = "cam_clk";
 		clock-cntl-level = "turbo";
-		clock-rates = <24000000>;
+		clock-rates = <31000000>;
 
 		cam,isp = <0>;                  // 0 : INT , 1 : EXT , 2 : SOC
 		cam,cal_memory = <2>;           // 0 : N , 1 : FROM , 2 : EEPROM , 3 : OTP
@@ -528,8 +528,8 @@
 		cam_clk-supply = <&titan_top_gdsc>;
 		regulator-names = "cam_vdig", "cam_vio", "cam_vana", "cam_clk";
 		rgltr-cntrl-support;
-		rgltr-min-voltage = <1050000 1800000 2800000 0>;
-		rgltr-max-voltage = <1050000 1800000 2800000 0>;
+		rgltr-min-voltage = <1000000 1780000 2780000 0>;
+		rgltr-max-voltage = <1000000 1780000 2780000 0>;
 		rgltr-load-current = <200000 200000 5000 0>;
 		gpio-no-mux = <0>;
 		pinctrl-names = "cam_default", "cam_suspend";
@@ -548,7 +548,7 @@
 		clocks = <&clock_camcc CAM_CC_MCLK3_CLK>;
 		clock-names = "cam_clk";
 		clock-cntl-level = "turbo";
-		clock-rates = <24000000>;
+		clock-rates = <31000000>;
 
 		cam,isp = <2>;                  // 0 : INT , 1 : EXT , 2 : SOC
 		cam,cal_memory = <0>;           // 0 : N , 1 : FROM , 2 : EEPROM , 3 : OTP
