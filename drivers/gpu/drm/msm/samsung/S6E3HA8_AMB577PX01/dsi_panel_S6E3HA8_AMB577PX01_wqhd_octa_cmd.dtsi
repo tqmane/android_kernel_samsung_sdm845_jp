@@ -107,7 +107,7 @@
 		qcom,mdss-dsi-stream = <0>;
 		qcom,mdss-dsi-mdp-trigger = "none";
 		qcom,mdss-dsi-dma-trigger = "trigger_sw";
-		qcom,mdss-dsi-panel-framerate = <60>;
+		qcom,mdss-dsi-panel-framerate = <75>;
 		//qcom,mdss-dsi-panel-clockrate = <898000000>;
 
 		qcom,mdss-pan-physical-width-dimension = <64>; /* 64.08mm, round-off */
@@ -537,14 +537,14 @@
 		samsung,panel_cover_control_enable_cmds_revA = [
 			29 01 00 00 00 00 03 F0 5A 5A
 			29 01 00 00 00 00 02 B0 04
-			29 01 00 00 00 00 03 F2 29 F0		/* LDI FPS Change(40.47hz) */
+			29 01 00 00 00 00 03 F0 38 40          /* LDI FPS Change(60.0Hz) */
 			29 01 00 00 00 00 03 F0 A5 A5
 		];
 
 		samsung,panel_cover_control_disable_cmds_revA = [
 			29 01 00 00 00 00 03 F0 5A 5A
 			29 01 00 00 00 00 02 B0 04
-			29 01 00 00 00 00 03 F2 1C 70		/* LDI FPS Recovery(59.835hz) */
+			29 01 00 00 00 00 03 F0 EA 60          /* LDI FPS Recovery(75.0Hz) */
 			29 01 00 00 00 00 03 F0 A5 A5
 		];
 
@@ -3793,20 +3793,20 @@
 		];
 
 		samsung,dyn_mipi_clk_ffc_cmds_revA = [
-			29 00 00 00 00 00 06 C5 0D 10 B4 3E 01 /* 0 Default(897.6Mbps) */
-			29 00 00 00 00 00 06 C5 0D 10 B4 3E 01 /* 1 897.6Mbps */
-			29 00 00 00 00 00 06 C5 0D 10 B4 3D A2 /* 2 903Mbps */
-			29 00 00 00 00 00 06 C5 0D 10 B4 3D 29 /* 3 910Mbps */
-			29 00 00 00 00 00 06 C5 0D 10 B4 3B D8 /* 4 930Mbps */
+			29 00 00 00 00 00 06 C5 0D 10 B4 47 D1 /* 0 Default(900Mbps) */
+			29 00 00 00 00 00 06 C5 0D 10 B4 47 D1 /* 1 900Mbps */
+			29 00 00 00 00 00 06 C5 0D 10 B4 46 48 /* 2 907.5Mbps */
+			29 00 00 00 00 00 06 C5 0D 10 B4 45 BF /* 3 915Mbps */
+			29 00 00 00 00 00 06 C5 0D 10 B4 44 34 /* 4 937.5Mbps */
 		];
 
 		samsung,dynamic_mipi_clk_timing_table = <
 		/*<FPS><HFP><HBP><HPW><HSS><VFP><VBP><VPW>*/
-			60  115  120   44    0  115  124   80	/* 0 Default(897.6) */
-			60  115  120   44    0  115  124   80	/* 1 897.6Mbps */
-			60  120	 120   44    0  119  124   80	/* 2 903Mbps */
-			60  125	 120   44    0  123  124   80	/* 3 910Mbps */
-			60  142	 120   44    0  121  124   80	/* 4 930Mbps */
+			75  115  120   44    0  115  124   80	/* 0 Default(897.6) */
+			75  115  120   44    0  115  124   80	/* 1 897.6Mbps */
+			75  120	 120   44    0  119  124   80	/* 2 903Mbps */
+			75  125	 120   44    0  123  124   80	/* 3 910Mbps */
+			75  142	 120   44    0  121  124   80	/* 4 930Mbps */
 		>;
 
 		samsung,dynamic_mipi_clk_sel_table = <
@@ -5668,7 +5668,7 @@
 				qcom,mdss-dsi-v-pulse-width = <80>;
 				qcom,mdss-dsi-v-back-porch = <124>;
 				qcom,mdss-dsi-v-front-porch = <120>;
-				qcom,mdss-dsi-panel-framerate = <60>;
+				qcom,mdss-dsi-panel-framerate = <75>;
 				qcom,mdss-dsi-panel-phy-timings = [00 21 09 09 24 23 08 08 08 03 04 00];
 				qcom,mdss-dsi-timing-switch-command = [
 					29 00 00 00 00 00 03 9F A5 A5		/* LV1 (9F) unlock */
@@ -5816,7 +5816,7 @@
 				qcom,mdss-dsi-v-pulse-width = <80>;
 				qcom,mdss-dsi-v-back-porch = <124>;
 				qcom,mdss-dsi-v-front-porch = <860>;
-				qcom,mdss-dsi-panel-framerate = <60>;
+				qcom,mdss-dsi-panel-framerate = <75>;
 				qcom,mdss-dsi-panel-phy-timings = [00 21 09 09 24 23 08 08 08 03 04 00];
 				qcom,mdss-dsi-timing-switch-command = [
 					29 00 00 00 00 00 03 9F A5 A5		/* LV1 (9F) unlock */
@@ -5962,7 +5962,7 @@
 				qcom,mdss-dsi-v-pulse-width = <80>;
 				qcom,mdss-dsi-v-back-porch = <124>;
 				qcom,mdss-dsi-v-front-porch = <1600>;
-				qcom,mdss-dsi-panel-framerate = <60>;
+				qcom,mdss-dsi-panel-framerate = <75>;
 				qcom,mdss-dsi-panel-phy-timings = [00 21 09 09 24 23 08 08 08 03 04 00];
 				qcom,mdss-dsi-timing-switch-command = [
 					29 00 00 00 00 00 03 9F A5 A5		/* LV1 (9F) unlock */

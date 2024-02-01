@@ -22904,14 +22904,14 @@
 	qcom,gpu-pwrlevels {
 		#address-cells = <1>;
 		#size-cells = <0>;
-		qcom,initial-pwrlevel = <5>,
+		qcom,initial-pwrlevel = <5>;
 		compatible = "qcom,gpu-pwrlevels";
 
 		qcom,gpu-pwrlevel@0 {
 			reg = <0>;
 			qcom,gpu-freq = <600000000>;
 			qcom,bus-freq = <12>;
-			qcom,bus-min = <12>;
+			qcom,bus-min = <11>;
 			qcom,bus-max = <12>;
 		};
 
@@ -22928,7 +22928,7 @@
 			qcom,gpu-freq = <487000000>;
 			qcom,bus-freq = <10>;
 			qcom,bus-min = <9>;
-			qcom,bus-max = <12>;
+			qcom,bus-max = <11>;
 		};
 
 		qcom,gpu-pwrlevel@3 {
@@ -22936,7 +22936,7 @@
 			qcom,gpu-freq = <425000000>;
 			qcom,bus-freq = <9>;
 			qcom,bus-min = <8>;
-			qcom,bus-max = <11>;
+			qcom,bus-max = <10>;
 		};
 
 		qcom,gpu-pwrlevel@4 {
@@ -22950,7 +22950,7 @@
 		qcom,gpu-pwrlevel@5 {
 			reg = <5>;
 			qcom,gpu-freq = <280000000>;
-			qcom,bus-freq = <6>;
+			qcom,bus-freq = <5>;
 			qcom,bus-min = <5>;
 			qcom,bus-max = <7>;
 		};

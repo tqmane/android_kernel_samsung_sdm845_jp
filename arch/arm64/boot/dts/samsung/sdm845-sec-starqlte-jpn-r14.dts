@@ -29,7 +29,7 @@
 #include "sdm845-starq-max77705.dtsi"
 #include "sdm845-sec-starqlte-jpn-felica-r00.dtsi"
 #include "sdm845-sec-starqlte-jpn-isdbt-r00.dtsi"
-#include "../../../../drivers/gpu/drm/msm/samsung/S6E3HA8_AMB577PX01/dsi_panel_S6E3HA8_AMB577PX01_wqhd_octa_cmd_jpn.dtsi"
+#include "../../../../drivers/gpu/drm/msm/samsung/S6E3HA8_AMB577PX01/dsi_panel_S6E3HA8_AMB577PX01_wqhd_octa_cmd.dtsi"
 
 / {
 	model = "Samsung STARQLTE JPN PROJECT Rev14";
@@ -70,5 +70,70 @@
 				 <&imp_list 101 200 9>,
 				 <&imp_list 201 1000 10>,
 				 <&imp_list 1001 0x7fffffff 8>;
+	};
+};
+
+&msm_gpu {
+	qcom,gpu-pwrlevels {
+		#address-cells = <1>;
+		#size-cells = <0>;
+		qcom,initial-pwrlevel = <5>;
+		compatible = "qcom,gpu-pwrlevels";
+
+		qcom,gpu-pwrlevel@0 {
+			reg = <0>;
+			qcom,gpu-freq = <710000000>;
+			qcom,bus-freq = <12>;
+			qcom,bus-min = <12>;
+			qcom,bus-max = <12>;
+		};
+
+		qcom,gpu-pwrlevel@1 {
+			reg = <1>;
+			qcom,gpu-freq = <675000000>;
+			qcom,bus-freq = <12>;
+			qcom,bus-min = <10>;
+			qcom,bus-max = <12>;
+		};
+
+		qcom,gpu-pwrlevel@2 {
+			reg = <2>;
+			qcom,gpu-freq = <596000000>;
+			qcom,bus-freq = <10>;
+			qcom,bus-min = <9>;
+			qcom,bus-max = <12>;
+		};
+
+		qcom,gpu-pwrlevel@3 {
+			reg = <3>;
+			qcom,gpu-freq = <520000000>;
+			qcom,bus-freq = <9>;
+			qcom,bus-min = <8>;
+			qcom,bus-max = <11>;
+		};
+
+		qcom,gpu-pwrlevel@4 {
+			reg = <4>;
+			qcom,gpu-freq = <414000000>;
+			qcom,bus-freq = <8>;
+			qcom,bus-min = <7>;
+			qcom,bus-max = <9>;
+		};
+
+		qcom,gpu-pwrlevel@5 {
+			reg = <5>;
+			qcom,gpu-freq = <342000000>;
+			qcom,bus-freq = <6>;
+			qcom,bus-min = <5>;
+			qcom,bus-max = <7>;
+		};
+
+		qcom,gpu-pwrlevel@6 {
+			reg = <6>;
+			qcom,gpu-freq = <0>;
+			qcom,bus-freq = <0>;
+			qcom,bus-min = <0>;
+			qcom,bus-max = <0>;
+		};
 	};
 };
