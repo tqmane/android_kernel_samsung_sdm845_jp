@@ -10,7 +10,7 @@ PARENT_DIR=`readlink -f ${DIR}/..`
 export PLATFORM_VERSION=10
 export ANDROID_MAJOR_VERSION=q
 BUILD_CROSS_COMPILE=$PARENT_DIR/aarch64-linux-android-4.9/bin/aarch64-linux-android-
-KERNEL_MAKE_ENV="LOCALVERSION=-afaneh92"
+KERNEL_MAKE_ENV="LOCALVERSION=-tqmane-v1_@Elchanz3"
 
 # Color
 ON_BLUE=`echo -e "\033[44m"`	# On Blue
@@ -28,7 +28,7 @@ pause(){
 toolchain(){
   if [ ! -d $PARENT_DIR/aarch64-linux-android-4.9 ]; then
     pause 'clone Toolchain aarch64-linux-android-4.9 cross compiler'
-    git clone --branch android-9.0.0_r59 https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 $PARENT_DIR/aarch64-linux-android-4.9
+    git clone -b lineage-19.1 https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9 $PARENT_DIR/aarch64-linux-android-4.9
     . $DIR/build_menu
   fi
 }
